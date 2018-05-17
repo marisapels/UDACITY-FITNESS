@@ -1,3 +1,8 @@
+import React from 'react';
+import { View } from 'react-natvie';
+import { FontAwesome, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons';
+import { white } from './colors';
+
 export function getMetricMetaInfo (metric) {
     const info = {
       run: {
@@ -137,4 +142,25 @@ export function getMetricMetaInfo (metric) {
     const date = new Date(time)
     const todayUTC = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
     return todayUTC.toISOString().split('T')[0]
+  }
+
+  export function getMetricMetaInfo () {
+    const info = {
+      run: {
+        displayName: 'Run',
+        max: 50,
+        unit: 'miles',
+        step: 1,
+        type: 'steppers',
+        getIcon() {
+          return (
+
+          )
+        }
+      },
+      bike: {},
+      swim: {},
+      sleep: {},
+      eat: {},
+    }
   }
